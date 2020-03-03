@@ -1,7 +1,5 @@
 #!/bin/sh
 
-DOCKER_CE_VERSION='18.06.3.ce-3.el7'
-
 # Remove older versions.
 sudo yum remove docker \
                   docker-client \
@@ -21,7 +19,7 @@ sudo yum install -y yum-utils \
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 # Install docker
-sudo yum install docker-ce-$DOCKER_CE_VERSION docker-ce-cli containerd.io
+sudo yum install -y docker-ce  docker-ce-cli containerd.io
 
 # Start Docker
 sudo systemctl start docker
